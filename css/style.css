@@ -8,7 +8,7 @@ html, body{
 #result-display{
     min-height: 20px;
 }
-button{
+.bbtn{
     margin: 10px;
     font-size: 40px;
     background-color: transparent;
@@ -18,7 +18,19 @@ button{
     border-radius: 50%;
 }
 
-button:hover{
+.bbtn:hover{
     border: 1px solid rgba(0, 0, 0, .5);
+    cursor: pointer;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#reset{
+    height: 30px;
+    width: 150px;
+    background-color: aqua;
+    border-radius: 30px;
     cursor: pointer;
 }

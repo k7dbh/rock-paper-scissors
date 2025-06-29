@@ -6,16 +6,21 @@
  let playerChoice
  let conputerChoice
   
- /*------------- Cached Elements References -------------- */
+ /*------------- 1.Cached Elements References -------------- */
  const rockBtnEl = document.querySelector
  ('#rock')
  const paperBtnEl = document.querySelector
  ('#paper')
  const scissorBtnEl = document.querySelector
  ('#scissors')
+ const resultDisplayEl = document.querySelector
+ ('#result-display')
+ const restartGame = document.querySelector
+ ('#reset')
  
+  
 
- /*------------- Functions -------------- */
+ /*-------------3. Functions -------------- */
 
  function getComputerChoice() {
     // generate a random number 0-2
@@ -28,10 +33,10 @@
  
 
  // initialize game state
- function play() {
-    console.log('computerChoice',conputerChoice)
+ function play(event) {
     computerChoice = getComputerChoice()
-    console.log('computerChoice',computerChoice)
+   playerChoice = event.target.id
+   compare()
     
 
 
@@ -39,12 +44,52 @@
     render()
 
  }
- play()
+ 
 
  // updated our UI/html directly
  function render() {
+    resultDisplayEl.textContent = `Computer chose ${computerChoice} and you chose ${playerChoice}. ${msg}`
 
  }
 
- /*------------- Event Listeners -------------- */
+ function test() {
+    console.log('you clicked me')
+ }
+ function compare(){
+    // compare playerChoice to computerChoice
+    // if playerChoice beats computerChoice
+    // update msg to say "Player wins!"
+    // else update msg to say "Computer wins"
+    // else if tie, update message to say "Tie"
+    if(playerChoice === "rock" && computerChoice === "rock"){
+        msg = "You Tied!"
+    }else if(playerChoice === "paper" && computerChoice === "paper"){
+        msg = "You Tied!"
+    }else if(playerChoice === "scissors" && computerChoice === "scissors"){
+        msg = "You Tied!"
+    }else if(playerChoice === "rock" && computerChoice === "scissors"){
+        msg = "You Win!"
+    }else if(playerChoice === "rock" && computerChoice === "paper"){
+        msg = "You Lose!"
+    }else if(playerChoice === "scissors" && computerChoice === "rock"){
+        msg = "You Lose!"
+    }else if(playerChoice === "paper" && computerChoice === "rock"){
+        msg = "You Win!"
+    }else if(playerChoice === "scissors" && computerChoice === "paper"){
+        msg = "You Win!"
+    }else if(playerChoice === "paper" && computerChoice === "scissors"){
+        msg = "You lose"
+    }
+}
+function resetGame(){
+    resultDisplayEl.textContent = "" 
+    playerChoice = null
+    computerChoice = null
+}
+ /*-------------2. Event Listeners -------------- */
 
+ rockBtnEl.addEventListener('click', play)
+ paperBtnEl.addEventListener('click', play)
+ scissorBtnEl.addEventListener('click',play)
+ restartGame.addEventListener('click',resetGame)
+ 
