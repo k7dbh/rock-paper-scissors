@@ -1,9 +1,18 @@
-html, body{
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+.container{
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;;
 }
 #result-display{
     min-height: 20px;
@@ -22,15 +31,11 @@ html, body{
     border: 1px solid rgba(0, 0, 0, .5);
     cursor: pointer;
 }
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#reset{
+
+/* #reset{
     height: 30px;
     width: 150px;
     background-color: aqua;
     border-radius: 30px;
     cursor: pointer;
-}
+} */

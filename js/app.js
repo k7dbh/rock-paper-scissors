@@ -45,7 +45,6 @@
 
  }
  
-
  // updated our UI/html directly
  function render() {
     resultDisplayEl.textContent = `Computer chose ${computerChoice} and you chose ${playerChoice}. ${msg}`
